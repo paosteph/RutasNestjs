@@ -5,6 +5,7 @@ import {PreguntaService} from "./pregunta.service";
 import {InicioController} from "./inicio.controller";
 import {PreguntasFrecuentesController} from "./preguntasFrecuentes.controller";
 import {LogMiddleware} from "./log.middleware";
+import {RutaMiddleware} from "./ruta.middleware";
 
 @Module({
   imports: [],
@@ -20,6 +21,7 @@ export class AppModule implements NestModule{
     configure(consumer: MiddlewareConsumer): void{
         consumer.apply(LogMiddleware).with('archivo').forRoutes('/Pregunta/agregarPregunta');
         consumer.apply(LogMiddleware).with('consola').forRoutes('/Pregunta/mostrarPreguntas');
-        consumer.apply(LogMiddleware).with('todo').forRoutes('/Inicio/Pao');
+        //consumer.apply(LogMiddleware).with('todo').forRoutes('/Inicio/Pao');
+        consumer.apply(RutaMiddleware).forRoutes('/Inicio/Pao');
     }
 }
