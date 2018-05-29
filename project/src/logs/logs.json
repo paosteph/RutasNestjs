@@ -1,0 +1,20 @@
+{
+    "baseUrl": "/Inicio/Pao",
+    "hostname": "localhost",
+    "subdomains": [],
+    "ip": "::1",
+    "method": "GET",
+    "originalUrl": "/Inicio/Pao",
+    "path": "/",
+    "protocol": "http",
+    "headers": {
+        "host": "localhost:3000",
+        "user-agent": "Mozilla/5.0 (Windows NT 6.3; rv:60.0) Gecko/20100101 Firefox/60.0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "accept-language": "es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3",
+        "accept-encoding": "gzip, deflate",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
+        "if-none-match": "W/\"a-u+vhoL9khogyFPWzP3KSewkJpzM\""
+    }
+}

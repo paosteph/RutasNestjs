@@ -15,9 +15,9 @@ export class PreguntasFrecuentesController{
         );
 
 
-        html.replace("{{respuesta}}", this._preguntaServices.mostrarPreguntas()[1].respuest);
-
-        return html.replace("{{pregunta}}", this._preguntaServices.mostrarPreguntas()[1].pregunt);
+        html = html.replace("{{respuesta}}", this._preguntaServices.mostrarPreguntas()[0].respuest);
+        html = html.replace("{{pregunta}}", this._preguntaServices.mostrarPreguntas()[0].pregunt);
+        return html;
         //return html.replace('{{pregunta}}', this._preguntaServices.mostrarPreguntas()[1].pregunt);
             /*.forEach(
             (pregunta, indice, arreglo) =>{

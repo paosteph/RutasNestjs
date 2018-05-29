@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import {MiddlewareConsumer, Module, NestModule} from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {PreguntaService} from "./pregunta.service";
 import {InicioController} from "./inicio.controller";
 import {PreguntasFrecuentesController} from "./preguntasFrecuentes.controller";
+import {LogMiddleware} from "./log.middleware";
 
 @Module({
   imports: [],
@@ -15,4 +16,10 @@ import {PreguntasFrecuentesController} from "./preguntasFrecuentes.controller";
       PreguntaService
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule{
+    configure(consumer: MiddlewareConsumer): void{
+        consumer.apply(LogMiddleware).with('archivo').forRoutes('/Pregunta/agregarPregunta');
+        consumer.apply(LogMiddleware).with('consola').forRoutes('/Pregunta/mostrarPreguntas');
+        consumer.apply(LogMiddleware).with('todo').forRoutes('/Inicio/Pao');
+    }
+}

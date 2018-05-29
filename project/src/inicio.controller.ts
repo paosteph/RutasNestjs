@@ -1,6 +1,7 @@
 import {Controller, Get, HttpCode, Req, Response} from "@nestjs/common";
 
 const fs = require('fs');
+
 @Controller('Inicio')
 export class InicioController{
 
@@ -40,4 +41,8 @@ export class InicioController{
         return lectura;
     }
 
+    @Get('Pao')
+    inicioMiddle(){
+        return 'Inicio pao';
+    }
 }
